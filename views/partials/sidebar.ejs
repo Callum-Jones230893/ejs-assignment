@@ -1,0 +1,34 @@
+<% if (locals.animalArray) { %>
+  <div class="sidebar-wrapper">
+    <h3 class="sidebar__title">
+      <%= speciesName %>
+    </h3>
+    <ul class="sidebar__ul">
+      <% animalArray.forEach(animal => { %>
+        <li class="sidebar__li">
+          <a href="/<%=animal.species.toLowerCase()%>/<%= animal.slug%>">
+            <%= animal.name %>
+          </a>
+        </li>
+      <%})%>
+    </ul>
+  </div>
+  <% } %>
+<% if (locals.allAnimalsArray) { %>
+  <div class="sidebar-wrapper">
+  <% allAnimalsArray.forEach(species=> { %>
+      <h3 class="sidebar__title">
+        <%= species.name %>
+      </h3>
+      <ul class="sidebar__ul">
+        <% species.animals.forEach(animal => { %>
+          <li class="sidebar__li">
+            <a href="/<%= animal.species.toLowerCase()%>/<%= animal.slug %>">
+              <%= animal.name %>
+            </a>
+          </li>
+          <%})%>
+      </ul>
+    <% }) %>
+  </div>
+<% } %>

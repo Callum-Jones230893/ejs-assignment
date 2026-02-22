@@ -1,0 +1,39 @@
+<header>
+  <div class="header">
+    <div class="logo-container">
+      <a href="/"><img src="../../images/logo.png" alt="Logo" height="50px" width="50px"></a>
+    </div>
+    <div class="navigation">
+      <p class="nav-item"><a href="/">Home</a></p>
+    <%if(!locals.allAnimalsArray) {%>
+      <div class="nav-item drop">
+        <span class="nav-link toggle"><a href="/cats" class="toggle-link">Cats  <img class="toggle-arrow" src="/images/icons/arrow-down.png" alt="expand arrow" width="10px" height="auto"></a></span>
+        <div class="dropdown">
+          <% if (locals.catArray) { %>
+            <% catArray.forEach(cat => { %>
+              <a href="/cats/<%= cat.slug %>"><%= cat.name %></a>
+            <% }) %>
+          <% } else { %>
+            <span class="empty">No cats available</span>
+          <% } %>
+        </div>
+      </div>
+      <div class="nav-item drop">
+        <span class="nav-link toggle"><a href="/dogs" class="toggle-link">Dogs  <img class="toggle-arrow" src="/images/icons/arrow-down.png" alt="expand arrow" width="10px" height="auto"></a></span>
+      <div class="dropdown">
+          <% if (locals.dogArray) { %>
+            <% dogArray.forEach(dog => { %>
+              <a href="/dogs/<%= dog.slug %>"><%= dog.name %></a>
+            <% }) %>
+          <% } else { %>
+            <span class="empty">No dogs available</span>
+          <% } %>
+        </div>
+      </div>
+     <%} else {%>
+      <p class="nav-item"><a href="/cats">Cats  <img class="toggle-arrow" src="/images/icons/arrow-down.png" alt="expand arrow" width="10px" height="auto"></a></p>
+      <p class="nav-item"><a href="/dogs">Dogs  <img class="toggle-arrow" src="/images/icons/arrow-down.png" alt="expand arrow" width="10px" height="auto"></a></p>
+     <%}%>
+    </div>
+  </div>
+</header>

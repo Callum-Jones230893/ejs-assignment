@@ -1,0 +1,19 @@
+<% if(locals.speciesName) { %>
+  <% animals.forEach(species => { %>
+    <div class="main-container">
+      <div class="info-card">
+        <h1 class="info__title"><%= species.name %></h1>
+      </div>
+      <div class="info-container">
+        <div class="image-container">
+          <img src="<%= species.image %>" alt="<%= species.name %>" class="animal-image">
+        </div>
+        <p class="info-text"><%= species.breed %></p>
+        <p class="info-text"><%= species.description %></p>
+        <p class="info-text">Traits: <%= species.traits %></p>
+        <p class="info-text">Weight: <%= species.weight %></p>
+        <a href="/<%= species.species.toLowerCase() %>" class="group-link">Back to <%= species.species %></a>
+      </div>
+    </div>
+<%})%>
+<%}%>
