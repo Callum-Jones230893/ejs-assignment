@@ -35,7 +35,6 @@ a:hover {
   border-bottom: 1px solid rgb(221, 221, 221);
   display: flex;
   justify-content: space-between;
-  padding: 16px 24px;
 }
 
 .logo-container {
@@ -208,4 +207,5 @@ a:hover {
   margin-top: auto;
   text-align: center;
   padding: 12px;
+
 }
