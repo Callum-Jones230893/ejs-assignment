@@ -3,7 +3,7 @@ document.querySelectorAll(`.toggle-link`).forEach(link => {
     
     const container = link.closest(`.drop`);
     const href = link.getAttribute(`href`);
-    const isCurrentPage = window.location.pathname === href;
+    const isCurrentPage = window.location.pathname.startsWith(href);
     const active = container.classList.contains(`active`);
     const arrow = link.querySelector(".toggle-arrow");
 
@@ -41,4 +41,5 @@ document.addEventListener("click", (e) => {
   document.querySelectorAll(".drop.active").forEach(dropdown => {
     dropdown.classList.remove("active");
   });
+
 });
