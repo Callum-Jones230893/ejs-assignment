@@ -60,7 +60,6 @@ a:hover {
 .nav-item .toggle {
   border-radius: 6px;
   display: block;
-  padding: 8px 12px;
 }
 
 .nav-item a:hover,
@@ -209,3 +208,4 @@ a:hover {
   padding: 12px;
 
 }
+
